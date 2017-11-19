@@ -4,15 +4,15 @@ import java.util.ArrayList;
 
 public class Contacts {
 
-    private int phonenumber;
+    private String phonenumber;
     private String name;
 
-    public Contacts(int phonenumber, String name) {
+    public Contacts(String phonenumber, String name) {
         this.phonenumber = phonenumber;
         this.name = name;
     }
 
-    public int getPhonenumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 

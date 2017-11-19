@@ -9,13 +9,13 @@ public class MobilePhone {
     ArrayList<String> contacts = new ArrayList<String>();
 
 
-    public void addContact(int number, String name) {
+    public void addContact(String number, String name) {
         if(contactCheck(name)) {
             Contacts contact = new Contacts(number, name);
             contacts.add("Name: " + contact.getName() + "\n" + "Phonenumber: " + contact.getPhonenumber());
             System.out.println("(ADDED) \nName: " + contact.getName() + "\n" + "Phonenumber: " + contact.getPhonenumber());
         } else {
-            System.out.println("Contact name containg: " + name + " already exists");
+            System.out.println("Contact name containing: " + name + " already exists");
         }
     }
 
@@ -36,7 +36,7 @@ public class MobilePhone {
         }
     }
 
-    public void modifycontactPosition(int position, int newnumber, String newname) {
+    public void modifycontactPosition(int position, String newnumber, String newname) {
         if(contactCheck(newname)){
         String temp = contacts.get(position - 1);
         Contacts contact = new Contacts(newnumber, newname);
@@ -48,7 +48,7 @@ public class MobilePhone {
 
     }
 
-    public void modifycontactName(String item, int newnumber, String newname) {
+    public void modifycontactName(String item, String newnumber, String newname) {
         if(contactCheck(newname)){
         for (int i = 0; i < contacts.size(); i++) {
             if (contacts.get(i).contains(item)) {
@@ -76,13 +76,13 @@ public class MobilePhone {
     }
 
     public void SearchContacts(String item) {
+        int count = 0;
         for (int i = 0; i < contacts.size(); i++) {
             if (contacts.get(i).contains(item)) {
                 System.out.println(contacts.get(i));
-            } else {
-                System.out.println("Not found");
+                count++;
+                }
             }
-
+        if(count == 0){System.out.println("Contact" + item + "not found");}
         }
     }
-}

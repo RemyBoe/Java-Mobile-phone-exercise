@@ -46,7 +46,7 @@ public class Main {
 
 
         public static void printInstructions(){
-            System.out.println("Remy Mobile");
+            System.out.println("\n\nRemy Mobile");
             System.out.println("\nPress ");
             System.out.println("\t 0 - To print choice options.");
             System.out.println("\t 1 - To print your list of contacts");
@@ -58,43 +58,43 @@ public class Main {
         }
 
         public static void addContact() {
-        System.out.print("Please enter the contact number: ");
-        int tempNumber = scanner.nextInt();
-        System.out.print("Please enter the contact name: ");
+        System.out.print("Please enter the contact number: \n");
+        String tempNumber = scanner.nextLine();
+        System.out.print("Please enter the contact name: \n");
         String tempName = scanner2.nextLine();
         m.addContact(tempNumber, tempName);
         }
 
         public static void modifyContact(){
-            System.out.print("How would you like to search for the position to change? \nPress 1 for Name, 2 for Position and any other key to cancel");
-            int tempNumber = scanner.nextInt();
-            if(tempNumber == 1){
-                System.out.print("Please enter the name of the contact you would like to change");
+            System.out.print("How would you like to search for the position to change? \nPress 1 for Name, 2 for Position and any other key to cancel \n");
+            int choice = scanner.nextInt();
+            if(choice == 1){
+                System.out.print("Please enter the name of the contact you would like to change \n");
                 String searchName = scanner2.nextLine();
-                System.out.print("Please enter the new name of the contact you would like to add");
+                System.out.print("Please enter the new name of the contact you would like to add \n");
                 String setName = scanner3.nextLine();
-                System.out.print("Please enter the phonenumber of the contact you would like to add");
-                int phonenumber = scanner4.nextInt();
+                System.out.print("Please enter the phonenumber of the contact you would like to add \n");
+                String phonenumber = scanner4.nextLine();
                 m.modifycontactName(searchName, phonenumber, setName);
-            } else if(tempNumber == 2){
-                System.out.print("Please enter the position of the contact you would like to change");
+            } else if(choice == 2){
+                System.out.print("Please enter the position of the contact you would like to change \n");
                 int position = scanner.nextInt();
-                System.out.print("Please enter the new name of the contact you would like to add");
+                System.out.print("Please enter the new name of the contact you would like to add \n");
                 String setName = scanner2.nextLine();
-                System.out.print("Please enter the phonenumber of the contact you would like to add");
-                int phonenumber = scanner3.nextInt();
+                System.out.print("Please enter the phonenumber of the contact you would like to add \n");
+                String phonenumber = scanner3.nextLine();
                 m.modifycontactPosition(position, phonenumber, setName);
                 }
             }
 
         public static void removeContact(){
-            System.out.print("Who do you want to remove? (Insert a name or part of a name)");
+            System.out.print("Who do you want to remove? (Insert a name or part of a name) \n");
             String delName = scanner.nextLine();
             m.removeContact(delName);
         }
 
         public static void searchContact(){
-            System.out.print("Who do you want to find? (Insert a name or part of a name)");
+            System.out.print("Who do you want to find? (Insert a name or part of a name) \n");
             String searchName = scanner.nextLine();
             m.SearchContacts(searchName);
 
